@@ -61,9 +61,10 @@ const Genre = styled.h2`
     color: #007bff;
 `;
 
-const MovieCard = ({ movie, genreName, isExpanded, onCardClick }) => {
+const MovieCard = ({ movie, genreName }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
     return (
-        <Card className={isExpanded ? 'expanded' : ''} onClick={onCardClick} show={isExpanded}>
+        <Card className={isExpanded ? 'expanded' : ''} onClick={() => setIsExpanded(!isExpanded)} show={isExpanded}>
             <Genre>{genreName}</Genre>
             <img src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`} alt={movie.title} />
             <h3>{movie.title}</h3>
