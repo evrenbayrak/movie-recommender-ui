@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import MovieList from './components/MovieList';
+import Header from './components/Header';
+import styled from 'styled-components';
+import './index.css';
 
-function App() {
+const Container = styled.div`
+  text-align: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+const Footer = styled.footer`
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <MovieList />
+      <Footer>
+        Movie data taken from <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDb</a>.
+      </Footer>
+    </Container>
   );
-}
+};
 
 export default App;
