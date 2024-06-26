@@ -23,6 +23,7 @@ const MovieList = () => {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [expandedCard, setExpandedCard] = useState(null);
 
     useEffect(() => {
         const getMovies = async () => {
@@ -39,6 +40,10 @@ const MovieList = () => {
         getMovies();
     }, []);
 
+    const handleCardClick = (movieId) => {
+        setExpandedCard(prevId => (prevId === movieId ? null : movieId));
+    };
+
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -53,7 +58,9 @@ const MovieList = () => {
                 <MovieCard 
                     key={movie.id} 
                     movie={movie} 
-                    genreName={genreNames[movie.genreGroup]} 
+                    genreName={genreNames[movie.genreGroup]}
+                    isExpanded={expandedCard === movie.id}
+                    onCardClick={() => handleCardClick(movie.id)}
                 />
             ))}
         </List>
