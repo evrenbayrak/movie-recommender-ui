@@ -4,7 +4,6 @@ import logo from '../assets/cineroll-icon.png';
 
 const HeaderContainer = styled.header`
   background-color: #f5f5f5;
-  padding: 20px;
   color: #333;
   display: flex;
   justify-content: space-between;
@@ -12,9 +11,6 @@ const HeaderContainer = styled.header`
   border-bottom: 1px solid #ddd;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 
-  @media (max-width: 600px) {
-    padding: 10px;
-  }
 `;
 
 const TitleContainer = styled.div`
@@ -23,34 +19,15 @@ const TitleContainer = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 70px;
+  height: 90px;
   margin-right: 10px;
 
   @media (max-width: 600px) {
-    height: 30px;
+    height: 50px;
     margin-right: 0;
   }
 `;
 
-const Title = styled.h1`
-  font-size: 2.5em;
-  margin: 0;
-  color: #007bff;
-
-  @media (max-width: 600px) {
-    font-size: 1.8em;
-  }
-`;
-
-const Slogan = styled.p`
-  font-size: 1.2em;
-  margin: 0;
-  color: #555;
-
-  @media (max-width: 600px) {
-    font-size: 0.8em;
-  }
-`;
 
 const DateDisplay = styled.div`
   font-size: 1.2em;
@@ -75,10 +52,7 @@ const Header = () => {
       <HeaderContainer>
         <TitleContainer>
           <Logo src={logo} alt="Cineroll Logo" />
-          <div>
-            <Title>Cineroll</Title>
-            <Slogan>Your daily movie advisor</Slogan>
-          </div>
+
         </TitleContainer>
         <DateDisplay>{today}</DateDisplay>
       </HeaderContainer>

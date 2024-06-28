@@ -19,7 +19,7 @@ body {
 #root {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 /* Add some padding to the h1 */

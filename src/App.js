@@ -6,14 +6,14 @@ import './index.css';
 
 const Container = styled.div`
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   max-width: 1200px;
   margin: 0 auto;
 `;
 
 const Footer = styled.footer`
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 0.9rem;
 
   a {
