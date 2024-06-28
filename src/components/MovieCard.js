@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import RatingScore from './RatingScore';
 import Modal from './Modal';
+import '../MovieCard.css';
+
 
 const Card = styled.div`
     border: none;
@@ -46,7 +49,7 @@ const Info = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 8px 16px;
+    padding: 4px 8px;
     font-size: 0.85rem;
     color: #555;
 `;
@@ -56,6 +59,15 @@ const StyledTitle = styled.h3`
     margin: 8px 0;
     color: #333;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    .release-year {
+        font-size: 0.8rem;
+        margin-left: 8px;
+        color: #666;
+    }
 `;
 
 const MovieCard = ({ movie }) => {
@@ -73,14 +85,20 @@ const MovieCard = ({ movie }) => {
     return (
         <>
             <Card onClick={() => setIsModalOpen(true)}>
+            <div className="movie-card">
+            <div className="poster-container">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`} alt={movie.title} />
+                <RatingScore rating={movie.overallRating.toFixed(1)} />
+                </div>
                 <Info>
-                    <div>{releaseYear}</div>
-                    <div>{formattedRuntime}</div>
-                    <div>⭐ {movie.overallRating.toFixed(1)}</div>
+                    <div>{formattedRuntime}</div>                    
                 </Info>
                 <Genre>{movie.genreGroup.replace('_', ' & ')}</Genre>
-                <StyledTitle>{movie.title}</StyledTitle>
+                <StyledTitle>
+                    {movie.title}
+                {releaseYear && <span className="release-year">({releaseYear})</span>}
+                </StyledTitle>
+                </div>
             </Card>
             <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)} movie={movie} />
         </>

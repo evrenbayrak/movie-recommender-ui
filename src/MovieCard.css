@@ -1,0 +1,16 @@
+/* MovieCard.css */
+
+.movie-card {
+    position: relative;
+  }
+  
+  .poster-container {
+    position: relative;
+  }
+  
+  .rating-score {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 1;
+  }
