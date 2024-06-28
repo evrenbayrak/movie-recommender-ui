@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import RatingScore from './RatingScore';
+import RuntimeComponent from './RuntimeComponent'; 
 import Modal from './Modal';
 import '../MovieCard.css';
 
@@ -45,15 +46,6 @@ const Genre = styled.h2`
     text-align: center;
 `;
 
-const Info = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 4px 8px;
-    font-size: 0.85rem;
-    color: #555;
-`;
-
 const StyledTitle = styled.h3`
     font-size: 1rem;
     margin: 8px 0;
@@ -73,14 +65,7 @@ const StyledTitle = styled.h3`
 const MovieCard = ({ movie }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const getFormattedRuntime = (runtime) => {
-        const hours = Math.floor(runtime / 60);
-        const minutes = runtime % 60;
-        return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-    };
-
     const releaseYear = new Date(movie.releaseDate).getFullYear();
-    const formattedRuntime = getFormattedRuntime(movie.runtime);
 
     return (
         <>
@@ -89,10 +74,8 @@ const MovieCard = ({ movie }) => {
             <div className="poster-container">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`} alt={movie.title} />
                 <RatingScore rating={movie.overallRating.toFixed(1)} />
+                <RuntimeComponent runtime={movie.runtime} />
                 </div>
-                <Info>
-                    <div>{formattedRuntime}</div>                    
-                </Info>
                 <Genre>{movie.genreGroup.replace('_', ' & ')}</Genre>
                 <StyledTitle>
                     {movie.title}
