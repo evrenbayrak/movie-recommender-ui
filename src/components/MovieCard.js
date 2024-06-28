@@ -30,13 +30,13 @@ const Card = styled.div`
 
     h3 {
         font-size: 1.25rem;
-        margin: 16px 0;
+        margin: 8px 0;
         font-weight: bold;
     }
 `;
 
 const Genre = styled.h2`
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     margin: 8px 0;
     color: #777;
     text-align: center;

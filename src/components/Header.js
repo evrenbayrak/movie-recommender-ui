@@ -10,9 +10,9 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 
-    @media (max-width: 600px) {
+  @media (max-width: 600px) {
     padding: 10px;
   }
 `;
