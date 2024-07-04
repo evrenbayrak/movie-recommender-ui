@@ -45,7 +45,6 @@ i18n
         translation: zh,
       }
     },
-    lng: 'en',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
