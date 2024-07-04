@@ -15,5 +15,7 @@
     "runtime": "Süre",
     "rating": "Reyting",
     "releaseDate": "Çıkış Tarihi",
+    "runtime_hours_only": "{{hours}}sa",
+    "runtime_hours_minutes": "{{hours}}sa {{minutes}}dk",
     "Your daily movie advisor": "Günlük film danışmanınız"
   }

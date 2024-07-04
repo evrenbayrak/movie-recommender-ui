@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const RuntimeWrapper = styled.div`
   position: absolute;
@@ -12,20 +13,21 @@ const RuntimeWrapper = styled.div`
 `;
 
 const RuntimeComponent = ({ runtime }) => {
+  const { t } = useTranslation();
+
   const hours = Math.floor(runtime / 60);
   const minutes = runtime % 60;
-  let displayRuntime = '';
 
-  if (hours > 0) {
-    displayRuntime += `${hours}h `;
-  }
-  if (minutes > 0) {
-    displayRuntime += `${minutes}m`;
+  let formattedRuntime;
+  if (minutes === 0) {
+      formattedRuntime = t('runtime_hours_only', { hours });
+  } else {
+      formattedRuntime = t('runtime_hours_minutes', { hours, minutes });
   }
 
   return (
     <RuntimeWrapper>
-      {displayRuntime}
+      {formattedRuntime}
     </RuntimeWrapper>
   );
 };

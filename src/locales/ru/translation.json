@@ -15,5 +15,7 @@
     "runtime": "Продолжительность",
     "rating": "Рейтинг",
     "releaseDate": "Дата выхода",
+    "runtime_hours_only": "{{hours}}ч",
+    "runtime_hours_minutes": "{{hours}}ч {{minutes}}м",
     "Your daily movie advisor": "Ваш ежедневный советник по фильмам"
   }

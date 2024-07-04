@@ -127,7 +127,13 @@ const Modal = ({ show, onClose, movie }) => {
     const getFormattedRuntime = (runtime) => {
         const hours = Math.floor(runtime / 60);
         const minutes = runtime % 60;
-        return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+        let formattedRuntime;
+        if (minutes === 0) {
+            formattedRuntime = t('runtime_hours_only', { hours });
+        } else {
+            formattedRuntime = t('runtime_hours_minutes', { hours, minutes });
+        }
+        return formattedRuntime;
     };
 
     const releaseYear = new Date(movieDetail.releaseDate).getFullYear();
@@ -154,7 +160,7 @@ const Modal = ({ show, onClose, movie }) => {
                     {movieDetail.writer !== 'N/A' && <SubInfo><strong>{t('writer')}:</strong> {movieDetail.writer}</SubInfo>}
                     {movieDetail.actors !== 'N/A' && <SubInfo><strong>{t('actors')}:</strong> {movieDetail.actors}</SubInfo>}
                     <IMDbLink href={`https://www.imdb.com/title/${movieDetail.imdbId}`} target="_blank" rel="noopener noreferrer">
-                        {t('View on IMDb')}
+                        {t('IMDb')}
                     </IMDbLink>
                 </InfoContainer>
             </ModalContainer>

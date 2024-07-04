@@ -15,5 +15,7 @@
     "runtime": "مدة العرض",
     "rating": "التقييم",
     "releaseDate": "تاريخ الإصدار",
+    "runtime_hours_only": "{{hours}}س",
+    "runtime_hours_minutes": "{{hours}}س {{minutes}}د",
     "Your daily movie advisor": "مستشارك اليومي للأفلام"
   }

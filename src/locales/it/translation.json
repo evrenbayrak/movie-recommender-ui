@@ -15,5 +15,7 @@
     "runtime": "Durata",
     "rating": "Valutazione",
     "releaseDate": "Data di rilascio",
+    "runtime_hours_only": "{{hours}}h",
+    "runtime_hours_minutes": "{{hours}}h {{minutes}}m",
     "Your daily movie advisor": "Il tuo consulente cinematografico quotidiano"
   }
