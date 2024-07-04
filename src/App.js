@@ -3,6 +3,8 @@ import MovieList from './components/MovieList';
 import Header from './components/Header';
 import styled from 'styled-components';
 import './index.css';
+import './i18n'; // import the i18n configuration
+
 
 const Container = styled.div`
   text-align: center;

@@ -1,0 +1,19 @@
+{
+    "title": "电影推荐",
+    "genre": {
+      "ACTION_ADVENTURE": "动作 & 冒险",
+      "DRAMA_CRIME": "剧情 & 犯罪",
+      "FAMILY_ANIMATION": "家庭 & 动画",
+      "HORROR_THRILLER": "恐怖 & 惊悚",
+      "COMEDY_ROMANCE": "喜剧 & 爱情",
+      "HISTORY_DOCUMENTARY": "历史 & 纪录片"
+    },
+    "overview": "概述",
+    "director": "导演",
+    "writer": "编剧",
+    "actors": "演员",
+    "runtime": "时长",
+    "rating": "评分",
+    "releaseDate": "上映日期",
+    "Your daily movie advisor": "你的每日电影顾问"
+  }

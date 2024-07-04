@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import RatingScore from './RatingScore';
-import RuntimeComponent from './RuntimeComponent'; 
+import RuntimeComponent from './RuntimeComponent';
 import Modal from './Modal';
+import { useTranslation } from 'react-i18next';
 import '../MovieCard.css';
-
 
 const Card = styled.div`
     border: none;
@@ -64,28 +64,36 @@ const StyledTitle = styled.h3`
 
 const MovieCard = ({ movie }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const { t } = useTranslation();
     const movieDetail = movie.movie;
     const releaseYear = new Date(movieDetail.releaseDate).getFullYear();
-    
+  
     return (
-        <>
-            <Card onClick={() => setIsModalOpen(true)}>
-            <div className="movie-card">
+      <>
+        <Card onClick={() => setIsModalOpen(true)}>
+          <div className="movie-card">
             <div className="poster-container">
-                <img src={`https://image.tmdb.org/t/p/w500${movieDetail.posterPath}`} alt={movie.title} />
-                <RatingScore rating={movieDetail.overallRating.toFixed(1)} />
-                <RuntimeComponent runtime={movieDetail.runtime} />
-                </div>
-                <Genre>{movieDetail.genreGroup.replace('_', ' & ')}</Genre>
-                <StyledTitle>
-                    {movie.title}
-                {releaseYear && <span className="release-year">({releaseYear})</span>}
-                </StyledTitle>
-                </div>
-            </Card>
-            <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)} movie={movie} />
-        </>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movieDetail.posterPath}`}
+                alt={movie.title}
+              />
+              <RatingScore rating={movieDetail.overallRating.toFixed(1)} />
+              <RuntimeComponent runtime={movieDetail.runtime} />
+            </div>
+            <Genre>{t(`genre.${movieDetail.genreGroup}`)}</Genre>
+            <StyledTitle>
+              {movie.title}
+              {releaseYear && <span className="release-year">({releaseYear})</span>}
+            </StyledTitle>
+          </div>
+        </Card>
+        <Modal
+          show={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          movie={movie}
+        />
+      </>
     );
-};
-
-export default MovieCard;
+  };
+  
+  export default MovieCard;

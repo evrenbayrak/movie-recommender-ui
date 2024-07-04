@@ -1,0 +1,19 @@
+{
+    "title": "Film Tavsiyesi",
+    "genre": {
+      "ACTION_ADVENTURE": "Aksiyon & Macera",
+      "DRAMA_CRIME": "Drama & Suç",
+      "FAMILY_ANIMATION": "Aile & Animasyon",
+      "HORROR_THRILLER": "Korku & Gerilim",
+      "COMEDY_ROMANCE": "Komedi & Romantik",
+      "HISTORY_DOCUMENTARY": "Tarih & Belgesel"
+    },
+    "overview": "Özet",
+    "director": "Yönetmen",
+    "writer": "Senarist",
+    "actors": "Oyuncular",
+    "runtime": "Süre",
+    "rating": "Reyting",
+    "releaseDate": "Çıkış Tarihi",
+    "Your daily movie advisor": "Günlük film danışmanınız"
+  }

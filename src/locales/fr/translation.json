@@ -1,0 +1,19 @@
+{
+    "title": "Recommandeur de Films",
+    "genre": {
+      "ACTION_ADVENTURE": "Action & Aventure",
+      "DRAMA_CRIME": "Drame & Crime",
+      "FAMILY_ANIMATION": "Famille & Animation",
+      "HORROR_THRILLER": "Horreur & Thriller",
+      "COMEDY_ROMANCE": "Comédie & Romance",
+      "HISTORY_DOCUMENTARY": "Histoire & Documentaire"
+    },
+    "overview": "Aperçu",
+    "director": "Réalisateur",
+    "writer": "Scénariste",
+    "actors": "Acteurs",
+    "runtime": "Durée",
+    "rating": "Note",
+    "releaseDate": "Date de sortie",
+    "Your daily movie advisor": "Votre conseiller quotidien en films"
+  }

@@ -1,0 +1,19 @@
+{
+    "title": "مستشار الأفلام",
+    "genre": {
+      "ACTION_ADVENTURE": "أكشن & مغامرة",
+      "DRAMA_CRIME": "دراما & جريمة",
+      "FAMILY_ANIMATION": "عائلي & رسوم متحركة",
+      "HORROR_THRILLER": "رعب & إثارة",
+      "COMEDY_ROMANCE": "كوميديا & رومانسي",
+      "HISTORY_DOCUMENTARY": "تاريخ & وثائقي"
+    },
+    "overview": "ملخص",
+    "director": "المخرج",
+    "writer": "الكاتب",
+    "actors": "الممثلون",
+    "runtime": "مدة العرض",
+    "rating": "التقييم",
+    "releaseDate": "تاريخ الإصدار",
+    "Your daily movie advisor": "مستشارك اليومي للأفلام"
+  }

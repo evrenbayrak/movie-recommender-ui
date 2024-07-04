@@ -1,0 +1,19 @@
+{
+    "title": "Filmempfehlung",
+    "genre": {
+      "ACTION_ADVENTURE": "Action & Abenteuer",
+      "DRAMA_CRIME": "Drama & Krimi",
+      "FAMILY_ANIMATION": "Familie & Animation",
+      "HORROR_THRILLER": "Horror & Thriller",
+      "COMEDY_ROMANCE": "Komödie & Romantik",
+      "HISTORY_DOCUMENTARY": "Geschichte & Dokumentarfilm"
+    },
+    "overview": "Übersicht",
+    "director": "Regisseur",
+    "writer": "Drehbuchautor",
+    "actors": "Schauspieler",
+    "runtime": "Laufzeit",
+    "rating": "Bewertung",
+    "releaseDate": "Veröffentlichungsdatum",
+    "Your daily movie advisor": "Ihr täglicher Filmberater"
+  }

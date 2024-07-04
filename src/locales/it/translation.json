@@ -1,0 +1,19 @@
+{
+    "title": "Consigliere di Film",
+    "genre": {
+      "ACTION_ADVENTURE": "Azione & Avventura",
+      "DRAMA_CRIME": "Dramma & Crimine",
+      "FAMILY_ANIMATION": "Famiglia & Animazione",
+      "HORROR_THRILLER": "Horror & Thriller",
+      "COMEDY_ROMANCE": "Commedia & Romantico",
+      "HISTORY_DOCUMENTARY": "Storia & Documentario"
+    },
+    "overview": "Panoramica",
+    "director": "Regista",
+    "writer": "Sceneggiatore",
+    "actors": "Attori",
+    "runtime": "Durata",
+    "rating": "Valutazione",
+    "releaseDate": "Data di rilascio",
+    "Your daily movie advisor": "Il tuo consulente cinematografico quotidiano"
+  }

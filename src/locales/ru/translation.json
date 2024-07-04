@@ -1,0 +1,19 @@
+{
+    "title": "Рекомендатель фильмов",
+    "genre": {
+      "ACTION_ADVENTURE": "Экшн & Приключения",
+      "DRAMA_CRIME": "Драма & Криминал",
+      "FAMILY_ANIMATION": "Семейный & Анимация",
+      "HORROR_THRILLER": "Ужасы & Триллер",
+      "COMEDY_ROMANCE": "Комедия & Романтика",
+      "HISTORY_DOCUMENTARY": "История & Документальный"
+    },
+    "overview": "Обзор",
+    "director": "Режиссер",
+    "writer": "Сценарист",
+    "actors": "Актеры",
+    "runtime": "Продолжительность",
+    "rating": "Рейтинг",
+    "releaseDate": "Дата выхода",
+    "Your daily movie advisor": "Ваш ежедневный советник по фильмам"
+  }

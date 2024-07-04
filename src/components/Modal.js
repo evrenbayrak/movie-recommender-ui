@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTranslation } from 'react-i18next';
 
 const Overlay = styled.div`
     position: fixed;
@@ -119,6 +120,7 @@ const Tagline = styled.p`
 
 const Modal = ({ show, onClose, movie }) => {
     const isMobile = useMediaQuery('(max-width: 768px)');
+    const { t } = useTranslation();
     const movieDetail = movie.movie;
     if (!show) return null;
 
@@ -143,16 +145,16 @@ const Modal = ({ show, onClose, movie }) => {
                     <SubInfo>{movieDetail.originalLanguage} | {movieDetail.originalTitle}</SubInfo>
                     {movie.tagline && <Tagline>"{movie.tagline}"</Tagline>}
                     <Info>
-                        <div>Release Date: {releaseYear}</div>
-                        <div>Runtime: {formattedRuntime}</div>
-                        <div>Rating: ⭐ {movieDetail.overallRating.toFixed(1)}</div>
+                        <div>{t('releaseDate')}: {releaseYear}</div>
+                        <div>{t('runtime')}: {formattedRuntime}</div>
+                        <div>{t('rating')}: ⭐ {movieDetail.overallRating.toFixed(1)}</div>
                     </Info>
-                    <Overview><strong>Overview:</strong> {movie.overview}</Overview>
-                    {movieDetail.director !== 'N/A' && <SubInfo><strong>Director:</strong> {movieDetail.director}</SubInfo>}
-                    {movieDetail.writer !== 'N/A' && <SubInfo><strong>Writer:</strong> {movieDetail.writer}</SubInfo>}
-                    {movieDetail.actors !== 'N/A' && <SubInfo><strong>Actors:</strong> {movieDetail.actors}</SubInfo>}
+                    <Overview><strong>{t('overview')}:</strong> {movie.overview}</Overview>
+                    {movieDetail.director !== 'N/A' && <SubInfo><strong>{t('director')}:</strong> {movieDetail.director}</SubInfo>}
+                    {movieDetail.writer !== 'N/A' && <SubInfo><strong>{t('writer')}:</strong> {movieDetail.writer}</SubInfo>}
+                    {movieDetail.actors !== 'N/A' && <SubInfo><strong>{t('actors')}:</strong> {movieDetail.actors}</SubInfo>}
                     <IMDbLink href={`https://www.imdb.com/title/${movieDetail.imdbId}`} target="_blank" rel="noopener noreferrer">
-                        View on IMDb
+                        {t('View on IMDb')}
                     </IMDbLink>
                 </InfoContainer>
             </ModalContainer>
