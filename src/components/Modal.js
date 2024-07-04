@@ -119,7 +119,7 @@ const Tagline = styled.p`
 
 const Modal = ({ show, onClose, movie }) => {
     const isMobile = useMediaQuery('(max-width: 768px)');
-
+    const movieDetail = movie.movie;
     if (!show) return null;
 
     const getFormattedRuntime = (runtime) => {
@@ -128,30 +128,30 @@ const Modal = ({ show, onClose, movie }) => {
         return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
     };
 
-    const releaseYear = new Date(movie.releaseDate).getFullYear();
-    const formattedRuntime = getFormattedRuntime(movie.runtime);
+    const releaseYear = new Date(movieDetail.releaseDate).getFullYear();
+    const formattedRuntime = getFormattedRuntime(movieDetail.runtime);
 
     return (
         <Overlay>
             <ModalContainer>
                 {!isMobile && (
-                    <Poster src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`} alt={movie.title} />
+                    <Poster src={`https://image.tmdb.org/t/p/w500${movieDetail.posterPath}`} alt={movie.title} />
                 )}
                 <InfoContainer>
                     <CloseButton onClick={onClose}>&times;</CloseButton>
                     <Title>{movie.title}</Title>
-                    <SubInfo>{movie.originalLanguage} | {movie.originalTitle}</SubInfo>
+                    <SubInfo>{movieDetail.originalLanguage} | {movieDetail.originalTitle}</SubInfo>
                     {movie.tagline && <Tagline>"{movie.tagline}"</Tagline>}
                     <Info>
                         <div>Release Date: {releaseYear}</div>
                         <div>Runtime: {formattedRuntime}</div>
-                        <div>Rating: ⭐ {movie.overallRating.toFixed(1)}</div>
+                        <div>Rating: ⭐ {movieDetail.overallRating.toFixed(1)}</div>
                     </Info>
                     <Overview><strong>Overview:</strong> {movie.overview}</Overview>
-                    {movie.director !== 'N/A' && <SubInfo><strong>Director:</strong> {movie.director}</SubInfo>}
-                    {movie.writer !== 'N/A' && <SubInfo><strong>Writer:</strong> {movie.writer}</SubInfo>}
-                    {movie.actors !== 'N/A' && <SubInfo><strong>Actors:</strong> {movie.actors}</SubInfo>}
-                    <IMDbLink href={`https://www.imdb.com/title/${movie.imdbId}`} target="_blank" rel="noopener noreferrer">
+                    {movieDetail.director !== 'N/A' && <SubInfo><strong>Director:</strong> {movieDetail.director}</SubInfo>}
+                    {movieDetail.writer !== 'N/A' && <SubInfo><strong>Writer:</strong> {movieDetail.writer}</SubInfo>}
+                    {movieDetail.actors !== 'N/A' && <SubInfo><strong>Actors:</strong> {movieDetail.actors}</SubInfo>}
+                    <IMDbLink href={`https://www.imdb.com/title/${movieDetail.imdbId}`} target="_blank" rel="noopener noreferrer">
                         View on IMDb
                     </IMDbLink>
                 </InfoContainer>

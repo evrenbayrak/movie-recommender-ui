@@ -16,7 +16,8 @@ const genreNames = {
     DRAMA_CRIME: "Drama & Crime",
     FAMILY_ANIMATION: "Family & Animation",
     HORROR_THRILLER: "Horror & Thriller",
-    COMEDY_ROMANCE: "Comedy & Romance"
+    COMEDY_ROMANCE: "Comedy & Romance",
+    HISTORY_DOCUMENTARY: "History & Documentary"
 };
 
 const MovieList = () => {
@@ -51,9 +52,9 @@ const MovieList = () => {
         <List>
             {movies.map(movie => (
                 <MovieCard 
-                    key={movie.id} 
+                    key={movie.movie.id} 
                     movie={movie} 
-                    genreName={genreNames[movie.genreGroup]} 
+                    genreName={genreNames[movie.movie.genreGroup]} 
                 />
             ))}
         </List>

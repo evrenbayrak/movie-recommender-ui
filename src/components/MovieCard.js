@@ -64,19 +64,19 @@ const StyledTitle = styled.h3`
 
 const MovieCard = ({ movie }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const releaseYear = new Date(movie.releaseDate).getFullYear();
-
+    const movieDetail = movie.movie;
+    const releaseYear = new Date(movieDetail.releaseDate).getFullYear();
+    
     return (
         <>
             <Card onClick={() => setIsModalOpen(true)}>
             <div className="movie-card">
             <div className="poster-container">
-                <img src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`} alt={movie.title} />
-                <RatingScore rating={movie.overallRating.toFixed(1)} />
-                <RuntimeComponent runtime={movie.runtime} />
+                <img src={`https://image.tmdb.org/t/p/w500${movieDetail.posterPath}`} alt={movie.title} />
+                <RatingScore rating={movieDetail.overallRating.toFixed(1)} />
+                <RuntimeComponent runtime={movieDetail.runtime} />
                 </div>
-                <Genre>{movie.genreGroup.replace('_', ' & ')}</Genre>
+                <Genre>{movieDetail.genreGroup.replace('_', ' & ')}</Genre>
                 <StyledTitle>
                     {movie.title}
                 {releaseYear && <span className="release-year">({releaseYear})</span>}
