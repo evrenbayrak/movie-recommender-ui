@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8041/movie/daily-movies';
+const API_URL = 'https://cineroll.app/api/movie/daily-movies';
 
 export const fetchDailyMovies = async () => {
     try {
