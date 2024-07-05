@@ -254,3 +254,9 @@ h1 {
     padding-left: 0;
   }
 }
+
+.language-switcher {
+  position: fixed;
+  background: #fff;
+  cursor: pointer;
+}

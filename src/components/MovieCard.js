@@ -64,7 +64,7 @@ const StyledTitle = styled.h3`
 
 const MovieCard = ({ movie }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const movieDetail = movie.movie;
     const releaseYear = new Date(movieDetail.releaseDate).getFullYear();
   
@@ -82,7 +82,7 @@ const MovieCard = ({ movie }) => {
             </div>
             <Genre>{t(`genre.${movieDetail.genreGroup}`)}</Genre>
             <StyledTitle>
-              {movie.title}
+              {i18n.language === 'en' ? movieDetail.title : movie.title} 
               {releaseYear && <span className="release-year">({releaseYear})</span>}
             </StyledTitle>
           </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import LanguageSwitcher from './LanguageSwitcher';
 import logo from '../assets/cineroll-icon.png';
+
 
 const HeaderContainer = styled.header`
   background-color: #f5f5f5;
@@ -30,11 +32,11 @@ const Logo = styled.img`
 
 
 const DateDisplay = styled.div`
-  font-size: 1.2em;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
   color: #777;
-
-  @media (max-width: 600px) {
+    @media (max-width: 600px) {
     font-size: 0.6em;
     margin-top: 10px;
   }
@@ -52,9 +54,8 @@ const Header = () => {
       <HeaderContainer>
         <TitleContainer>
           <Logo src={logo} alt="Cineroll Logo" />
-
         </TitleContainer>
-        <DateDisplay>{today}</DateDisplay>
+        <DateDisplay><LanguageSwitcher />{today}</DateDisplay>
       </HeaderContainer>
     );
   };

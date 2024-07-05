@@ -127,7 +127,7 @@ const Tagline = styled.p`
 
 const Modal = ({ show, onClose, movie }) => {
     const isMobile = useMediaQuery('(max-width: 768px)');
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const movieDetail = movie.movie;
     if (!show) return null;
 
@@ -145,7 +145,7 @@ const Modal = ({ show, onClose, movie }) => {
 
     const releaseYear = new Date(movieDetail.releaseDate).getFullYear();
     const formattedRuntime = getFormattedRuntime(movieDetail.runtime);
-
+    
     return (
         <Overlay>
             <ModalContainer>
@@ -154,9 +154,9 @@ const Modal = ({ show, onClose, movie }) => {
                 )}
                 <InfoContainer>
                     <CloseButton onClick={onClose}>&times;</CloseButton>
-                    <Title>{movie.title}</Title>
+                    <Title>{i18n.language === 'en' ? movieDetail.title : movie.title} </Title>
                     <SubInfo>{movieDetail.originalLanguage} | {movieDetail.originalTitle}</SubInfo>
-                    {movie.tagline && <Tagline>"{movie.tagline}"</Tagline>}
+                    {movie.tagline && <Tagline>"{i18n.language === 'en' ? movieDetail.tagline : movie.tagline} "</Tagline>}
                     <Info>
                         <div>{releaseYear}</div>
                         <div>{formattedRuntime}</div>
@@ -168,7 +168,7 @@ const Modal = ({ show, onClose, movie }) => {
                     {movieDetail.director !== 'N/A' && <SubInfo><strong>{t('director')}:</strong> {movieDetail.director}</SubInfo>}
                     {movieDetail.writer !== 'N/A' && <SubInfo><strong>{t('writer')}:</strong> {movieDetail.writer}</SubInfo>}
                     {movieDetail.actors !== 'N/A' && <SubInfo><strong>{t('actors')}:</strong> {movieDetail.actors}</SubInfo>}
-                    <Overview><strong>{t('overview')}:</strong> {movie.overview}</Overview>
+                    <Overview><strong>{t('overview')}:</strong> {i18n.language === 'en' ? movieDetail.overview : movie.overview} </Overview>
                 </InfoContainer>
             </ModalContainer>
         </Overlay>
