@@ -8,7 +8,7 @@ const RuntimeWrapper = styled.div`
   color: #fff;
   font-size: 12px;
   font-weight: bold;
-  padding: 0px 10px;
+  padding: 3px 10px;
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 `;
 

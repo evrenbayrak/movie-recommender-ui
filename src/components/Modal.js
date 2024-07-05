@@ -86,12 +86,15 @@ const SubInfo = styled.p`
 
 const Info = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     margin: 8px 0;
     font-size: 0.9rem;
     color: #555;
+    background-color: #e0e0e0ab; /* Background color */
+    padding: 8px;
+    border-radius: 4px;
 `;
 
 const Overview = styled.p`
@@ -107,7 +110,10 @@ const IMDbLink = styled.a`
     font-weight: bold;
     color: #f5c518; /* IMDb yellow color */
     text-decoration: none;
-
+    border: 1px solid #f5c518; /* Add a border to IMDb link */
+    padding: 2px 6px; /* Add some padding */
+    border-radius: 4px; /* Add rounded corners */
+    
     &:hover {
         text-decoration: underline;
     }
@@ -148,25 +154,21 @@ const Modal = ({ show, onClose, movie }) => {
                 )}
                 <InfoContainer>
                     <CloseButton onClick={onClose}>&times;</CloseButton>
-                    <Title>{movie.title}
-
-                    </Title>
-                    <SubInfo>{movieDetail.originalLanguage} | {movieDetail.originalTitle} | 
-                    </SubInfo>
+                    <Title>{movie.title}</Title>
+                    <SubInfo>{movieDetail.originalLanguage} | {movieDetail.originalTitle}</SubInfo>
                     {movie.tagline && <Tagline>"{movie.tagline}"</Tagline>}
                     <Info>
-                        <div>{t('releaseDate')}: {releaseYear}</div>
-                        <div>{t('runtime')}: {formattedRuntime}</div>
-                        <div>{t('rating')}: ⭐ {movieDetail.overallRating.toFixed(1)}</div>
+                        <div>{releaseYear}</div>
+                        <div>{formattedRuntime}</div>
+                        <div>⭐ {movieDetail.overallRating.toFixed(1)}</div>
+                        <IMDbLink href={`https://www.imdb.com/title/${movieDetail.imdbId}`} target="_blank" rel="noopener noreferrer">
+                           IMDb
+                        </IMDbLink>
                     </Info>
                     {movieDetail.director !== 'N/A' && <SubInfo><strong>{t('director')}:</strong> {movieDetail.director}</SubInfo>}
                     {movieDetail.writer !== 'N/A' && <SubInfo><strong>{t('writer')}:</strong> {movieDetail.writer}</SubInfo>}
                     {movieDetail.actors !== 'N/A' && <SubInfo><strong>{t('actors')}:</strong> {movieDetail.actors}</SubInfo>}
                     <Overview><strong>{t('overview')}:</strong> {movie.overview}</Overview>
-                    <IMDbLink href={`https://www.imdb.com/title/${movieDetail.imdbId}`} target="_blank" rel="noopener noreferrer">
-                         IMDb
-                    </IMDbLink>
-                    
                 </InfoContainer>
             </ModalContainer>
         </Overlay>
